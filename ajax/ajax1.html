@@ -1,0 +1,24 @@
+<html>
+<body>
+<div id="demo">
+<h1>The XMLHttpRequest Object</h1>
+<button type="button" onclick="loadDoc()">Change content</button>
+</div>
+<script>
+function loadDoc(){
+ var xhttp = new XMLHttpRequest();
+ //THE XML REQUEST OBJECT CAN BE USED TO EXCHANGE DATA WITH A SERVER BEHIND THE SCENE
+ xhttp.onreadystatechange=function(){
+     if(this.readyState==4&&this.status==200){
+     document.getElementById("demo").innerHTML=this.responseText;
+ }
+ };
+ xhttp.open("GET","ajax_info.txt",true)
+ xhttp.send();
+}
+</script>
+
+
+</body>
+
+</html>
